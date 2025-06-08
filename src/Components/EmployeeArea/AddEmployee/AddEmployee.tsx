@@ -7,7 +7,7 @@ import {employeeService} from "../../../Services/EmployeeService.ts";
 
 export function AddEmployee() {
 
-    const {register, handleSubmit} = useForm<EmployeeModel>();
+    const {register, handleSubmit, formState: { isValid }} = useForm<EmployeeModel>();
     const navigate = useNavigate();
 
     async function send(employee: EmployeeModel) {
@@ -30,21 +30,21 @@ export function AddEmployee() {
         <div className="AddEmployee">
             <form onSubmit={handleSubmit(send)}>
                 <label>שם פרטי:</label>
-                <input type="text" {...register("firstName")} />
+                <input type="text" {...register("firstName", { required: true })} />
                 <label>שם משפחה:</label>
-                <input type="text" {...register("lastName")} />
+                <input type="text" {...register("lastName", { required: true })} />
                 <label>תפקיד:</label>
-                <input type="text" {...register("title")} />
+                <input type="text" {...register("title", { required: true })} />
                 <label>עיר:</label>
-                <input type="text" {...register("city")} />
+                <input type="text" {...register("city", { required: true })} />
                 <label>מדינה:</label>
-                <input type="text" {...register("country")} />
+                <input type="text" {...register("country", { required: true })} />
                 <label>תאריך לידה:</label>
-                <input type="text" {...register("birthDate")} />
+                <input type="text" {...register("birthDate",{ required: true })} />
                 <label>העלאת תמונה:</label>
-                <input type="file" accept="image/*" {...register("image")}/>
+                <input type="file" accept="image/*" {...register("image", { required: true })}/>
 
-                <button>הוסף עובד</button>
+                <button type="submit" disabled={!isValid}>הוסף עובד</button>
             </form>
         </div>
     );
