@@ -1,0 +1,18 @@
+
+.AddEmployee form {
+    margin: 20px auto;
+    width: 300px;
+    border: 1px solid black;
+    padding: 10px;
+    text-align: left;
+    border-radius: 10px;
+    box-shadow: 10px 10px 10px;
+}
+
+.AddEmployee form > input, form > button {
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    width: 100%;
+    font-size: large;
+}
+

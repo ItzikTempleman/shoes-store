@@ -1,0 +1,14 @@
+.EmployeeCard {
+	border-radius: 8px;
+    border:1px solid;
+    padding: 6px;
+    margin: 10px;
+    height: 90px;
+    width: 180px;
+    display: inline-block;
+    background-color: gainsboro;
+}
+.EmployeeCard:hover{
+    cursor: pointer;
+}
+
