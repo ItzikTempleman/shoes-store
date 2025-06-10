@@ -1,9 +1,9 @@
-
 .AddEmployee{
     width: 70%;
     display: inline-block;
 }
 
 .AddEmployee >form>*{
+    direction: rtl;
     margin: 20px;
 }

@@ -1,27 +1,38 @@
 import "./EmployeeDetails.css";
-import {useNavigate, useParams} from "react-router-dom";
+import {NavLink, useNavigate, useParams} from "react-router-dom";
 import {useEffect, useState} from "react";
 import type {EmployeeModel} from "../../../Models/EmployeeModel.ts";
 import {employeeService} from "../../../Services/EmployeeService.ts";
 import {useTitle} from "../../../Utils/UseTitle.ts";
+import {notify} from "../../../Utils/Notify.ts";
 
 export function EmployeeDetails() {
     useTitle("Employee info")
-    const navigate=useNavigate()
-    function returnToEmployees(){
-        navigate("/employees")
-    }
 
-    const params=useParams();
-    const id=+params.id!;
-    const [employee, setEmployee]=useState<EmployeeModel>()
+    const params = useParams();
+    const id = +params.id!;
+    const navigate = useNavigate()
+    const [employee, setEmployee] = useState<EmployeeModel>()
 
     useEffect(() => {
         employeeService.getOneEmployee(id)
-            .then(dbEmployee=>
+            .then(dbEmployee =>
                 setEmployee(dbEmployee)
             ).catch(err => console.log(err.message))
     }, [id]);
+
+
+    async function deleteMe() {
+        try {
+            const areYouSure = confirm("Are you sure you want to delete?")
+            if (!areYouSure) return
+            await employeeService.deleteEmployee(id)
+            notify.success("Employee has been deleted")
+            navigate("/employees")
+        } catch (err: unknown) {
+            notify.error(err)
+        }
+    }
 
     return (
         <div className="EmployeeDetails">
@@ -51,7 +62,12 @@ export function EmployeeDetails() {
             </div>
 
 
-            <button onClick={returnToEmployees}>חזרה</button>
+            <NavLink to="/employees"> Back</NavLink>
+
+            <span> | </span>
+            <NavLink to={"/employees/edit/" + employee?.id}> Edit</NavLink>
+            <span> | </span>
+            <NavLink to="#" onClick={deleteMe}>Delete</NavLink>
         </div>
     );
 }

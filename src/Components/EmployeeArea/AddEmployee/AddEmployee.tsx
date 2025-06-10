@@ -6,19 +6,20 @@ import {employeeService} from "../../../Services/EmployeeService.ts";
 import {notify} from "../../../Utils/Notify.ts";
 import {useTitle} from "../../../Utils/UseTitle.ts";
 import {Button, TextField} from "@mui/material";
-
+import {useState} from "react";
 
 export function AddEmployee() {
     useTitle("Add Employee")
     const {register, handleSubmit} = useForm<EmployeeModel>();
     const navigate = useNavigate();
+    const [imageToPreview, setImageToPreview] = useState("")
 
     async function send(employee: EmployeeModel) {
         try {
             employee.image = (employee.image as unknown as FileList)[0];
             await employeeService.addEmployee(employee);
-            notify.success("משתמש הוסף בהצלחה");
             navigate("/employees")
+            notify.success("משתמש הוסף בהצלחה");
         } catch (err: unknown) {
             notify.error(err);
         }
@@ -31,7 +32,7 @@ export function AddEmployee() {
                 <TextField
                     label="שם פרטי"
                     fullWidth
-                    inputProps={{ minLength: 2, maxLength: 30 }}
+                    inputProps={{minLength: 2, maxLength: 30}}
                     required
                     placeholder="שם פרטי"
                     {
@@ -41,7 +42,7 @@ export function AddEmployee() {
                 <TextField
                     label="שם משפחה"
                     fullWidth
-                    inputProps={{ minLength: 2, maxLength: 30 }}
+                    inputProps={{minLength: 2, maxLength: 30}}
                     required
                     placeholder="שם משפחה"
                     {
@@ -51,7 +52,7 @@ export function AddEmployee() {
                 <TextField
                     label="תפקיד"
                     fullWidth
-                    inputProps={{ minLength: 5, maxLength: 20 }}
+                    inputProps={{minLength: 5, maxLength: 20}}
                     required
                     placeholder="תפקיד"
                     {
@@ -60,7 +61,7 @@ export function AddEmployee() {
 
                 <TextField
                     label="עיר"
-                    inputProps={{ minLength: 3, maxLength: 30}}
+                    inputProps={{minLength: 3, maxLength: 30}}
                     required
                     fullWidth
                     placeholder="עיר"
@@ -71,7 +72,7 @@ export function AddEmployee() {
                 <TextField
                     label="מדינה"
                     fullWidth
-                    inputProps={{ minLength: 3, maxLength: 30}}
+                    inputProps={{minLength: 3, maxLength: 30}}
                     required
                     placeholder="מדינה"
                     {
@@ -88,19 +89,31 @@ export function AddEmployee() {
 
                 <TextField
                     variant="standard"
-                    InputProps={{ disableUnderline: true }}
+                    InputProps={{disableUnderline: true}}
                     type="file"
                     fullWidth
                     inputProps={
                         {accept: "image/*"}
                     }  {
+
                         ...register("image")
-                    }/>
+                    }
+                    onChange={(it) => {
+                        const target = it.target as HTMLInputElement;
+                        const file = target.files?.[0];
+                        if (file) {
+                            setImageToPreview(URL.createObjectURL(file));
+                        }
+                    }
+                }/>
+
+                <img src={imageToPreview}/>
 
                 <Button
+                    variant="contained"
                     color="primary"
                     fullWidth
-                    variant="contained"
+                    type="submit"
                 >הוסף עובד</Button>
             </form>
         </div>

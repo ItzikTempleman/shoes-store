@@ -6,7 +6,7 @@ import {Copyrights} from "../LayoutArea/Copyrights/Copyrights.tsx";
 
 export function Layout() {
     return (
-        <div className="Layout">
+        <div className="Layout" dir="rtl">
             <header>
                 <Header/>
             </header>

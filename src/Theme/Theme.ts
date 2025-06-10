@@ -1,6 +1,7 @@
-import { createTheme } from "@mui/material";
+import {createTheme} from "@mui/material";
 
 export const muiTheme = createTheme({
+    direction: `rtl`,
     palette: {
         primary: {
             main: "#1e7d8c"
@@ -15,8 +16,6 @@ export const muiTheme = createTheme({
             textTransform: "none"
         }
     },
-    components: {
-
-    }
+    components: {}
 
 });

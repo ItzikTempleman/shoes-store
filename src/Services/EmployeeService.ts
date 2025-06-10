@@ -22,11 +22,29 @@ class EmployeeService {
             }
         }
         try {
-            const response = await axios.post<EmployeeModel>(appConfig.employeesUrl, employee, options);
-            console.log("✅ Backend responded:", response.data);
+            await axios.post<EmployeeModel>(appConfig.employeesUrl, employee, options);
         } catch (err: unknown) {
             notify.error(err);
         }
+    }
+
+    public async updateEmployee(employee: EmployeeModel): Promise<void> {
+        const options: AxiosRequestConfig = {
+            headers: {
+                "Content-Type": "multipart/form-data"
+            }
+        }
+        try {
+            axios.put<EmployeeModel>(appConfig.employeesUrl + employee.id, employee, options)
+            notify.success("Employee updated successfully")
+        } catch (err: unknown) {
+            notify.error(err)
+        }
+
+    }
+
+    public async deleteEmployee(id: number): Promise<void> {
+        await axios.delete<EmployeeModel>(appConfig.employeesUrl + id)
     }
 }
 

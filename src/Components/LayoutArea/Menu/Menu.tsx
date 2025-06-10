@@ -10,6 +10,9 @@ export function Menu() {
             <NavLink to={"/success-stories"}>סיפורי הצלחה</NavLink>
             <NavLink to={"/employees"}>העובדים שלנו</NavLink>
             <NavLink to="/employees/new">הוסף עובד</NavLink>
+
+            <NavLink to={"/suppliers"}>הספקים שלנו</NavLink>
+            <NavLink to="/suppliers/new">הוסף ספק</NavLink>
             <NavLink to={"/about"}>מי אנחנו</NavLink>
         </div>
     );

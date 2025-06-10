@@ -2,13 +2,17 @@
 	border-radius: 8px;
     border:1px solid;
     padding: 6px;
-    margin: 10px;
-    height: 90px;
-    width: 180px;
+    margin: 6px;
+    height: 300px;
+    width: 240px;
     display: inline-block;
-    background-color: gainsboro;
 }
 .EmployeeCard:hover{
     cursor: pointer;
 }
 
+.EmployeeCard >img {
+    width: 140px;
+    height: 180px;
+    margin: 10px auto;
+}

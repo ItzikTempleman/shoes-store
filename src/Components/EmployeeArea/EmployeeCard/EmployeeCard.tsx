@@ -2,17 +2,17 @@ import "./EmployeeCard.css";
 import type {EmployeeModel} from "../../../Models/EmployeeModel.ts";
 import {useNavigate} from "react-router-dom";
 
-type EmployeeCardProps={
-    employee:EmployeeModel;
+type EmployeeCardProps = {
+    employee: EmployeeModel;
 }
 
 export function EmployeeCard(props: EmployeeCardProps) {
 
 
-    const navigate= useNavigate()
+    const navigate = useNavigate()
 
-    function navigateToDetails(){
-        navigate("/employees/"+props.employee.id)
+    function navigateToDetails() {
+        navigate("/employees/" + props.employee.id)
     }
 
 
@@ -24,12 +24,12 @@ export function EmployeeCard(props: EmployeeCardProps) {
                 <span>{props.employee.firstName} </span>
                 <span>{props.employee.lastName}</span>
             </div>
-<br/>
+            <br/>
             <div>
                 <div>תפקיד:</div>
                 <span>{props.employee.title}</span>
             </div>
-
+            <img src={props.employee.imageUrl}/>
         </div>
     );
 }
