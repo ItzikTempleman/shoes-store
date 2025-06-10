@@ -11,13 +11,13 @@ export function EmployeeCard(props: EmployeeCardProps) {
 
     const navigate= useNavigate()
 
-    function naviagteToDetails(){
+    function navigateToDetails(){
         navigate("/employees/"+props.employee.id)
     }
 
 
     return (
-        <div className="EmployeeCard" onClick={naviagteToDetails}>
+        <div className="EmployeeCard" onClick={navigateToDetails}>
 
             <div>
                 <div>שם:</div>
