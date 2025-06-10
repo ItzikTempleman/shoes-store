@@ -3,8 +3,10 @@ import {useEffect, useState} from "react";
 import type {EmployeeModel} from "../../../Models/EmployeeModel.ts";
 import {employeeService} from "../../../Services/EmployeeService.ts";
 import {EmployeeCard} from "../EmployeeCard/EmployeeCard.tsx";
+import {useTitle} from "../../../Utils/UseTitle.ts";
 
 export function EmployeeList() {
+    useTitle("Employees")
     const [employee, setEmployee]= useState<EmployeeModel[]>([])
     useEffect(() => {
         employeeService.getAllEmployees()

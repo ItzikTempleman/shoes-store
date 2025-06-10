@@ -3,48 +3,105 @@ import {EmployeeModel} from "../../../Models/EmployeeModel.ts";
 import {useForm} from "react-hook-form";
 import {useNavigate} from "react-router-dom";
 import {employeeService} from "../../../Services/EmployeeService.ts";
+import {notify} from "../../../Utils/Notify.ts";
+import {useTitle} from "../../../Utils/UseTitle.ts";
+import {Button, TextField} from "@mui/material";
 
 
 export function AddEmployee() {
-
-    const {register, handleSubmit, formState: { isValid }} = useForm<EmployeeModel>();
+    useTitle("Add Employee")
+    const {register, handleSubmit} = useForm<EmployeeModel>();
     const navigate = useNavigate();
 
     async function send(employee: EmployeeModel) {
         try {
             employee.image = (employee.image as unknown as FileList)[0];
             await employeeService.addEmployee(employee);
-            alert("משתמש הוסף בהצלחה")
+            notify.success("משתמש הוסף בהצלחה");
             navigate("/employees")
         } catch (err: unknown) {
-            if (err instanceof Error) {
-                console.error("❌ Backend error:", err.message);
-            } else {
-                console.error("❌ Unknown error occurred:", err);
-            }
-            throw err;
+            notify.error(err);
         }
     }
 
     return (
         <div className="AddEmployee">
             <form onSubmit={handleSubmit(send)}>
-                <label>שם פרטי:</label>
-                <input type="text" {...register("firstName", { required: true })} />
-                <label>שם משפחה:</label>
-                <input type="text" {...register("lastName", { required: true })} />
-                <label>תפקיד:</label>
-                <input type="text" {...register("title", { required: true })} />
-                <label>עיר:</label>
-                <input type="text" {...register("city", { required: true })} />
-                <label>מדינה:</label>
-                <input type="text" {...register("country", { required: true })} />
-                <label>תאריך לידה:</label>
-                <input type="text" {...register("birthDate",{ required: true })} />
-                <label>העלאת תמונה:</label>
-                <input type="file" accept="image/*" {...register("image", { required: true })}/>
 
-                <button type="submit" disabled={!isValid}>הוסף עובד</button>
+                <TextField
+                    label="שם פרטי"
+                    fullWidth
+                    inputProps={{ minLength: 2, maxLength: 30 }}
+                    required
+                    placeholder="שם פרטי"
+                    {
+                        ...register("firstName")
+                    }/>
+
+                <TextField
+                    label="שם משפחה"
+                    fullWidth
+                    inputProps={{ minLength: 2, maxLength: 30 }}
+                    required
+                    placeholder="שם משפחה"
+                    {
+                        ...register("lastName")
+                    }/>
+
+                <TextField
+                    label="תפקיד"
+                    fullWidth
+                    inputProps={{ minLength: 5, maxLength: 20 }}
+                    required
+                    placeholder="תפקיד"
+                    {
+                        ...register("title")
+                    }/>
+
+                <TextField
+                    label="עיר"
+                    inputProps={{ minLength: 3, maxLength: 30}}
+                    required
+                    fullWidth
+                    placeholder="עיר"
+                    {
+                        ...register("city")
+                    }/>
+
+                <TextField
+                    label="מדינה"
+                    fullWidth
+                    inputProps={{ minLength: 3, maxLength: 30}}
+                    required
+                    placeholder="מדינה"
+                    {
+                        ...register("country")
+                    }/>
+
+                <TextField
+                    label="תאריך לידה"
+                    fullWidth
+                    placeholder="תאריך לידה"
+                    {
+                        ...register("birthDate")
+                    }/>
+
+                <TextField
+                    variant="standard"
+                    InputProps={{ disableUnderline: true }}
+                    type="file"
+                    fullWidth
+                    inputProps={
+                        {accept: "image/*"}
+                    }  {
+                        ...register("image")
+                    }/>
+
+                <Button
+                    color="primary"
+                    fullWidth
+                    variant="contained"
+                >הוסף עובד</Button>
             </form>
         </div>
     );

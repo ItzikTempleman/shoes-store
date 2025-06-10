@@ -3,9 +3,10 @@ import {useNavigate, useParams} from "react-router-dom";
 import {useEffect, useState} from "react";
 import type {EmployeeModel} from "../../../Models/EmployeeModel.ts";
 import {employeeService} from "../../../Services/EmployeeService.ts";
+import {useTitle} from "../../../Utils/UseTitle.ts";
 
 export function EmployeeDetails() {
-
+    useTitle("Employee info")
     const navigate=useNavigate()
     function returnToEmployees(){
         navigate("/employees")

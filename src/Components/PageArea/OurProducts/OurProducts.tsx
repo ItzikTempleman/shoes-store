@@ -1,4 +1,5 @@
 import "./OurProducts.css";
+import {useTitle} from "../../../Utils/UseTitle.ts";
 
 const rawModules = import.meta.glob(
     "/src/assets/images/*.{jpg,jpeg,png,webp}",
@@ -16,6 +17,7 @@ for (const path in rawModules) {
 
 
 export function OurProducts() {
+    useTitle("Our shoes")
     return (
         <div className="OurProducts">
             <div className="ProductImages">

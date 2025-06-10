@@ -1,8 +1,9 @@
 import "./OurSuccessStories.css";
 import {useEffect, useState} from "react";
+import {useTitle} from "../../../Utils/UseTitle.ts";
 
 export function OurSuccessStories() {
-
+    useTitle("Stories")
     const [color, setColor] = useState(``);
 
     useEffect(() => {
