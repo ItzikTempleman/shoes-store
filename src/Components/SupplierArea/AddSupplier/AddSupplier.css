@@ -1,3 +1,9 @@
-.AddSupplier {
-	
+.AddSupplier{
+    width: 70%;
+    display: inline-block;
+}
+
+.AddSupplier >form>*{
+    direction: rtl;
+    margin: 20px;
 }

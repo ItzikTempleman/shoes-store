@@ -9,7 +9,7 @@ import {Button, TextField} from "@mui/material";
 import {useState} from "react";
 
 export function AddEmployee() {
-    useTitle("Add Employee")
+    useTitle("Add employee")
     const {register, handleSubmit} = useForm<EmployeeModel>();
     const navigate = useNavigate();
     const [imageToPreview, setImageToPreview] = useState("")
@@ -18,7 +18,7 @@ export function AddEmployee() {
         try {
             employee.image = (employee.image as unknown as FileList)[0];
             await employeeService.addEmployee(employee);
-            navigate("/employees")
+            navigate("/employees");
             notify.success("משתמש הוסף בהצלחה");
         } catch (err: unknown) {
             notify.error(err);
