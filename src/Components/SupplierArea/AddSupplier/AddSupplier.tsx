@@ -26,7 +26,6 @@ export function AddSupplier() {
         }
     }
 
-
     return (
         <div className="AddSupplier">
             <form onSubmit={handleSubmit(send)}>
@@ -78,6 +77,16 @@ export function AddSupplier() {
                     placeholder="מספר טלפון"
                     {
                         ...register("phone")
+                    }/>
+
+                <TextField
+                    label="פקס"
+                    fullWidth
+                    inputProps={{minLength: 2, maxLength: 30}}
+                    required
+                    placeholder="פקס"
+                    {
+                        ...register("fax")
                     }/>
 
                 <TextField

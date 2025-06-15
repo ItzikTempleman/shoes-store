@@ -1,5 +1,5 @@
 .Layout {
-    height: 100%;
+    height: 100vh;
     box-sizing: border-box;
     display: grid;
     grid-template-rows: 10% 80% 10%;
@@ -15,16 +15,12 @@ header, footer {
 }
 
 header, aside, main, footer{
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-    border-radius: 10px;
-    padding: 20px;
-    margin: 6px;
-    background-color: white;
+    border: solid 0.5px;
+    border-radius: 5px;
+    padding: 2px;
+    margin: 2px;
 }
 main{
     overflow: auto;
-}
-
-aside{
-    background-image: linear-gradient(45deg, white, #cbd6e1, #919da8);
+    height: 100%;
 }

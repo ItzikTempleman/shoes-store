@@ -6,6 +6,7 @@ export class SupplierModel {
     public city?: string;
     public address?: string;
     public phone?: string;
+    public fax?:string;
     public imageUrl?: string;
     public image?: File;
 }

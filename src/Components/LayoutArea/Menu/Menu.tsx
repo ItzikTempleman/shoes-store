@@ -4,16 +4,20 @@ import {NavLink} from "react-router-dom";
 export function Menu() {
     return (
         <div className="Menu">
-            <h3>תפריט</h3>
-            <NavLink to={"/home"}>דף הבית</NavLink>
-            <NavLink to={"/products"}>מוצרים</NavLink>
-            <NavLink to={"/success-stories"}>סיפורי הצלחה</NavLink>
-            <NavLink to={"/employees"}>העובדים שלנו</NavLink>
-            <NavLink to="/employees/new">הוסף עובד</NavLink>
 
-            <NavLink to={"/suppliers"}>הספקים שלנו</NavLink>
-            <NavLink to="/suppliers/new">הוסף ספק</NavLink>
-            <NavLink to={"/about"}>מי אנחנו</NavLink>
+            <NavLink to="/home" className="nav-link">דף הבית</NavLink>
+            <hr className="menu-divider" />
+
+
+            <NavLink to="/employees/new" className="nav-link">הוסף עובד</NavLink>
+            <NavLink to="/employees" end className="nav-link">העובדים שלנו</NavLink>
+            <hr className="menu-divider" />
+            <NavLink to="/suppliers/new" className="nav-link" >הוסף ספק</NavLink>
+            <NavLink to="/suppliers" end className="nav-link">הספקים שלנו</NavLink>
+            <hr className="menu-divider" />
+            <NavLink to="/products" className="nav-link">מוצרים</NavLink>
+            <NavLink to="/success-stories" className="nav-link">סיפורי הצלחה</NavLink>
+            <NavLink to= "/about" className="nav-link">מי אנחנו</NavLink>
         </div>
     );
 }

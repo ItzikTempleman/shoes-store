@@ -4,7 +4,7 @@ export const muiTheme = createTheme({
     direction: `rtl`,
     palette: {
         primary: {
-            main: "#1e7d8c"
+            main: "#1e5b8c"
         },
         secondary: {
             main: "#b2f3fd"

@@ -12,7 +12,7 @@ export function EmployeeCard(props: EmployeeCardProps) {
     const navigate = useNavigate()
 
     function navigateToDetails() {
-        navigate("/employees/" + props.employee.id)
+        navigate("/employees/" + props.employee.id);
     }
 
 

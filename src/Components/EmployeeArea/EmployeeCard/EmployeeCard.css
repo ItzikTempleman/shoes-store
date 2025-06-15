@@ -1,18 +1,29 @@
 .EmployeeCard {
-	border-radius: 8px;
-    border:1px solid;
-    padding: 6px;
-    margin: 6px;
-    height: 300px;
-    width: 240px;
-    display: inline-block;
-}
-.EmployeeCard:hover{
+    width: 260px;
+    height: 160px;
+    display: inline-flex;
+    text-align: left;
+    background-color: white;
+    margin: 4px;
+    padding: 10px;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
     cursor: pointer;
 }
 
-.EmployeeCard >img {
-    width: 140px;
-    height: 180px;
-    margin: 10px auto;
+.EmployeeCard img {
+    width: 100px;
+    height: 100px;
+    border-radius: 180px;
+    vertical-align: middle;
+}
+
+.EmployeeCard>div:first-child {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.EmployeeCard>div:last-child {
+    margin-left: auto;
 }

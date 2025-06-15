@@ -1,9 +1,19 @@
 .AddSupplier{
-    width: 70%;
-    display: inline-block;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    padding: 30px;
 }
 
-.AddSupplier >form>*{
+.AddSupplier >form>{
     direction: rtl;
-    margin: 20px;
+    width: 70%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.AddSupplier >form>*{
+    padding: 10px;
 }
