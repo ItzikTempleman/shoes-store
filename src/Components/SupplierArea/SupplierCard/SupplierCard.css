@@ -1,9 +1,7 @@
 .SupplierCard {
-    width: 260px;
-    height: 160px;
+    width: 280px;
+    height: 140px;
     display: inline-flex;
-    text-align: left;
-    background-color: white;
     margin: 4px;
     padding: 10px;
     border-radius: 4px;
@@ -11,19 +9,28 @@
     cursor: pointer;
 }
 
-.SupplierCard img {
-    width: 100px;
-    height: 100px;
-    border-radius: 180px;
-    vertical-align: middle;
-}
-
-.SupplierCard>div:first-child {
+.SupplierCard>div {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
-.SupplierCard>div:last-child {
-    margin-left: auto;
+.SupplierCard img {
+    width: 70px;
+    height: 70px;
+    border-radius: 180px;
+    vertical-align: middle;
+}
+
+.supplierNameFont, .supplierAddressFont{
+    font-family: Arial;
+}
+
+.supplierNameFont{
+    font-weight: bold;
+ font-size: 18px;
+}
+
+.supplierAddressFont{
+    font-size: 14px;
 }

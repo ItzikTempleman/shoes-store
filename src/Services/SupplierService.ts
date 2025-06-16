@@ -4,7 +4,6 @@ import {appConfig} from "../Utils/AppConfig.ts";
 import {notify} from "../Utils/Notify.ts";
 
 
-
 class SupplierService {
 
     public async getAllSuppliers(): Promise<SupplierModel[]> {
@@ -12,8 +11,8 @@ class SupplierService {
         return response.data
     }
 
-    public async getOneSupplier(id:number) :Promise<SupplierModel>{
-        const response =await axios.get<SupplierModel>(appConfig.suppliersUrl +id)
+    public async getOneSupplier(id: number): Promise<SupplierModel> {
+        const response = await axios.get<SupplierModel>(appConfig.suppliersUrl + id)
         return response.data
     }
 
@@ -29,6 +28,30 @@ class SupplierService {
             notify.error(err);
         }
 
+    }
+
+    public async updateSupplier(supplier: SupplierModel) {
+        const options: AxiosRequestConfig = {
+            headers: {
+                "Content-Type": "multipart/form-data"
+            }
+        };
+
+        try {
+
+            axios.put<SupplierModel>(appConfig.suppliersUrl + supplier.id, supplier, options)
+            notify.success("Supplier updated successfully")
+
+
+        } catch (err: any) {
+            console.log(err.message)
+        }
+
+    }
+
+
+    public async deleteSupplier(id: number) {
+        await axios.delete<SupplierModel>(appConfig.suppliersUrl + id);
     }
 
 }

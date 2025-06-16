@@ -20,14 +20,7 @@ export function OurProducts() {
     useTitle("Our shoes")
     return (
         <div className="OurProducts">
-            <div className="ProductImages">
-                <img src={imageModules["img1.jpg"]} />
-                <img src={imageModules["img2.jpg"]} />
-                <img src={imageModules["img3.jpg"]} />
-                <img src={imageModules["img4.jpg"]} />
-                <img src={imageModules["img5.jpg"]} />
-                <img src={imageModules["img6.jpg"]} />
-            </div>
+
         </div>
     );
 }

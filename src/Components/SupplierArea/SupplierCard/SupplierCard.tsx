@@ -17,15 +17,8 @@ export function SupplierCard(props: SupplierCardProps) {
     return (
         <div className="SupplierCard" onClick={navigateToDetails}>
             <div>
-                <div>שם ספק:</div>
-                <span>{props.supplier.company} </span>
-            </div>
-            <br/>
-            <div>
-                <div>כתובת:</div>
-                <span>{props.supplier.address}</span>
-                <br/>
-                <span>{ props.supplier.city}, {props.supplier.country}</span>
+                <span className="supplierNameFont"> {props.supplier.company} </span>
+                <span className="supplierAddressFont">{props.supplier.address}, { props.supplier.city}, {props.supplier.country}</span>
             </div>
             <img src={props.supplier.imageUrl}/>
         </div>

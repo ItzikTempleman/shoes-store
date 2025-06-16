@@ -25,7 +25,7 @@ export function EditEmployee() {
                     setValue("title", it.title)
                     setValue("city", it.city)
                     setValue("country", it.country)
-                setValue("birthDate", it.birthDate)
+                    setValue("birthDate", it.birthDate)
                     setImage(it.imageUrl!)
                 }
             ).catch(err => notify.error(err));

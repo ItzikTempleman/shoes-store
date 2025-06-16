@@ -62,10 +62,10 @@ export function EmployeeDetails() {
             </div>
 
 
-            <NavLink to="/employees"> Back</NavLink>
+            <NavLink to="/employee"> Back</NavLink>
 
             <span> | </span>
-            <NavLink to={"/employees/edit/" + employee?.id}> Edit</NavLink>
+            <NavLink to={"/employee/edit/" + employee?.id}> Edit</NavLink>
             <span> | </span>
             <NavLink to="#" onClick={deleteMe}>Delete</NavLink>
         </div>
