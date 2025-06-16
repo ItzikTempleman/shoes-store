@@ -38,11 +38,7 @@ class SupplierService {
         };
 
         try {
-
-            axios.put<SupplierModel>(appConfig.suppliersUrl + supplier.id, supplier, options)
-            notify.success("Supplier updated successfully")
-
-
+            await axios.put<SupplierModel>(appConfig.suppliersUrl + supplier.id, supplier, options)
         } catch (err: any) {
             console.log(err.message)
         }
