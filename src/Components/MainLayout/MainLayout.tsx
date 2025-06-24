@@ -1,12 +1,12 @@
-import "./Layout.css";
+import "./MainLayout.css";
 import {Header} from "../LayoutArea/Header/Header.tsx";
 import {Menu} from "../LayoutArea/Menu/Menu.tsx";
 import {Routing} from "../LayoutArea/Routing/Routing.tsx";
 import {Copyrights} from "../LayoutArea/Copyrights/Copyrights.tsx";
 
-export function Layout() {
+export function MainLayout() {
     return (
-        <div className="Layout" dir="rtl">
+        <div className="MainLayout" dir="rtl">
             <header>
                 <Header/>
             </header>

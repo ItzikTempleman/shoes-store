@@ -1,4 +1,9 @@
-
+.Copyrights {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
 .Copyrights p{
-
+    font-size: 10px;
 }
