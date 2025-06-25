@@ -1,10 +1,11 @@
 .MainLayout {
-    background: linear-gradient(45deg, #c5e5ec, #8cd7e3, #73c9d6, #73c9d6, #73c9d6, #73c9d6, #73c9d6);
+    background: linear-gradient(45deg, #c5e5ec, #9cb1d8, #8aa8df, #8aa8df, #8aa8df, #8aa8df, #8aa8df);
     height: 100vh;
     box-sizing: border-box;
     display: grid;
     grid-template-rows: minmax(70px, 90px) 1fr minmax(40px, 50px);
     grid-template-columns: minmax(180px, 180px) 1fr;
+
 }
 
 .MainLayout.white-background {
@@ -32,9 +33,14 @@ footer {
 }
 
 main {
+
     background: transparent !important;
     overflow: auto;
     min-height: 0;
+}
+
+main::-webkit-scrollbar {
+    display: none;
 }
 
 .MainLayout > * {

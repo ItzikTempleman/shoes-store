@@ -1,18 +1,17 @@
 .AddSupplier{
-    height: 100vh;
-    display: flex;
+    width: 70%;
+    display: inline-block;
     justify-content: center;
-    align-items: start;
     padding: 30px;
+    align-items: start;
 }
 
 .AddSupplier >form>{
     direction: rtl;
-    width: 70%;
-    max-width: 400px;
     display: flex;
     flex-direction: column;
     gap: 10px;
+    width: 70%;
 }
 .AddSupplier >form>*{
     padding: 10px;

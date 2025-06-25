@@ -1,9 +1,12 @@
 .EditSupplier {
     width: 70%;
     display: inline-block;
+    justify-content: center;
+    padding: 30px;
 }
 .EditSupplier >form>*{
     margin: 20px;
+    width: 70%;
 }
 
 img {
