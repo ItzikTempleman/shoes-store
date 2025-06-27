@@ -5,11 +5,16 @@ import type {SupplierModel} from "../../../Models/SupplierModel.ts";
 import {supplierService} from "../../../Services/SupplierService.ts";
 import {SupplierCard} from "../SupplierCard/SupplierCard.tsx";
 
+
 export function SupplierList() {
+
+
+
     useTitle("Suppliers")
     const [supplier, setSupplier]= useState<SupplierModel[]>([])
 
     useEffect(() => {
+
         supplierService.getAllSuppliers()
             .then(dbSupplier=>
                 setSupplier(dbSupplier)

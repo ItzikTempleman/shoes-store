@@ -13,6 +13,10 @@ import {SupplierList} from "../../SupplierArea/SupplierList/SupplierList.tsx";
 import {SupplierDetails} from "../../SupplierArea/SupplierDetails/SupplierDetails.tsx";
 import {EditSupplier} from "../../SupplierArea/EditSupplier/EditSupplier.tsx";
 import {AddSupplier} from "../../SupplierArea/AddSupplier/AddSupplier.tsx";
+import {ProductList} from "../../ProductArea/ProductList/ProductList.tsx";
+import {ProductDetails} from "../../ProductArea/ProductDetails/ProductDetails.tsx";
+import {EditProduct} from "../../ProductArea/EditProduct/EditProduct.tsx";
+import {AddProduct} from "../../ProductArea/AddProduct/AddProduct.tsx";
 
 export function Routing() {
     return (
@@ -22,6 +26,7 @@ export function Routing() {
                 <Route path="/home" element={<Home/>}/>
                 <Route path="/products" element={<OurProducts/>}/>
                 <Route path="/success-stories" element={<OurSuccessStories/>}/>
+
                 <Route path="/employees" element={<EmployeeList/>}/>
                 <Route path="/employees/:id" element={<EmployeeDetails/>}/>
                 <Route path="/employees/edit/:id" element={<EditEmployee/>}/>
@@ -31,6 +36,13 @@ export function Routing() {
                 <Route path="/suppliers/:id" element={<SupplierDetails/>}/>
                 <Route path="/suppliers/edit/:id" element={<EditSupplier/>}/>
                 <Route path="/suppliers/new" element={<AddSupplier/>}/>
+
+
+                <Route path="/products" element={<ProductList/>}/>
+                <Route path="/products/:id" element={<ProductDetails/>}/>
+                <Route path="/products/edit/:id" element={<EditProduct/>}/>
+                <Route path="/products/new" element={<AddProduct/>}/>
+
 
                 <Route path="/about" element={<About/>}/>
                 <Route path="*" element={<Page404/>}/>

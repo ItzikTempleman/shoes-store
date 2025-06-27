@@ -5,7 +5,7 @@
     display: grid;
     grid-template-rows: minmax(70px, 90px) 1fr minmax(40px, 50px);
     grid-template-columns: minmax(180px, 180px) 1fr;
-
+    direction: rtl;
 }
 
 .MainLayout.white-background {

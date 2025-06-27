@@ -1,8 +1,11 @@
 import "./Home.css";
 import {useTitle} from "../../../Utils/UseTitle.ts";
 
+
 export function Home() {
     useTitle("Home")
+
+
     const date =new Date();
     const dayOfMonth=date.getDate()
     return (
