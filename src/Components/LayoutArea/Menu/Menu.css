@@ -28,3 +28,9 @@
     color: #82ade3;
 }
 
+.menu-divider {
+    border: none;
+    border-top: 1px solid;
+    margin: 10px 0;
+    width: 100%;
+}

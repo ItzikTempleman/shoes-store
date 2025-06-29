@@ -9,7 +9,7 @@ import {supplierSlice} from "./SupplierSlice.ts";
 export type AppState = {
     products: ProductModel[],
     employees: EmployeeModel[],
-    supplier: SupplierModel[]
+    suppliers: SupplierModel[]
 }
 
 
@@ -18,7 +18,7 @@ export const store = configureStore<AppState>(
         reducer: {
             products: productSlice.reducer,
             employees: employeeSlice.reducer,
-            supplier: supplierSlice.reducer
+            suppliers: supplierSlice.reducer
         }
     }
 )
