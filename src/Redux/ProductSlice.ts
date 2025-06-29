@@ -3,7 +3,7 @@ import {createSlice, type PayloadAction} from "@reduxjs/toolkit";
 import type {ProductModel} from "../Models/ProductModel.ts";
 
 
-function initProduct(_: ProductModel[], payloadAction: PayloadAction<ProductModel[]>): ProductModel[] {
+function initProducts(_: ProductModel[], payloadAction: PayloadAction<ProductModel[]>): ProductModel[] {
     return payloadAction.payload;
 }
 
@@ -36,7 +36,7 @@ export const productSlice = createSlice<ProductModel[]>(
         name: "productSlices",
         initialState: [],
         reducers: {
-            initProduct, addProduct, updateProduct, deleteProduct
+            initProducts, addProduct, updateProduct, deleteProduct
         }
     }
 )

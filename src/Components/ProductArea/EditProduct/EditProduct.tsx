@@ -34,6 +34,7 @@ export function EditProduct() {
         try {
             product.image = (product.image as unknown as FileList)[0];
             product.id = id;
+            await productService.updateProduct(product);
             notify.success("Product has been updated");
             navigate("/products/");
         } catch (err: unknown) {

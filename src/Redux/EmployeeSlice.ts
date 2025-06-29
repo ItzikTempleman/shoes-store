@@ -3,7 +3,7 @@ import {createSlice, type PayloadAction} from "@reduxjs/toolkit";
 import type {EmployeeModel} from "../Models/EmployeeModel.ts";
 
 
-function initEmployee(_: EmployeeModel[], payloadAction: PayloadAction<EmployeeModel[]>): EmployeeModel[] {
+function initEmployees(_: EmployeeModel[], payloadAction: PayloadAction<EmployeeModel[]>): EmployeeModel[] {
     return payloadAction.payload;
 }
 
@@ -25,7 +25,7 @@ function deleteEmployee(currentState: EmployeeModel[], payloadAction: PayloadAct
     const newState = [...currentState];
     const employeeToDelete = payloadAction.payload;
     const indexToDelete = newState.findIndex(employee => employee.id === employeeToDelete);
-    newState.slice(indexToDelete, 1)
+    newState.splice(indexToDelete, 1)
     return newState;
 }
 
@@ -33,10 +33,10 @@ function deleteEmployee(currentState: EmployeeModel[], payloadAction: PayloadAct
 // @ts-expect-error
 export const employeeSlice = createSlice<EmployeeModel[]>(
     {
-        name: "employeeSlice",
+        name: "employeeSlices",
         initialState: [],
         reducers: {
-            initEmployee, addEmployee, updateEmployee, deleteEmployee
+            initEmployees, addEmployee, updateEmployee, deleteEmployee
         }
     }
 )

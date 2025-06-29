@@ -3,7 +3,7 @@ import {createSlice, type PayloadAction} from "@reduxjs/toolkit";
 import type {SupplierModel} from "../Models/SupplierModel.ts";
 
 
-function initSupplier(_: SupplierModel[], payloadAction: PayloadAction<SupplierModel[]>): SupplierModel[] {
+function initSuppliers(_: SupplierModel[], payloadAction: PayloadAction<SupplierModel[]>): SupplierModel[] {
     return payloadAction.payload;
 }
 
@@ -36,7 +36,7 @@ export const supplierSlice = createSlice<SupplierModel[]>(
         name: "supplierSlices",
         initialState: [],
         reducers: {
-            initSupplier, addSupplier, updateSupplier, deleteSupplier
+            initSuppliers, addSupplier, updateSupplier, deleteSupplier
         }
     }
 )

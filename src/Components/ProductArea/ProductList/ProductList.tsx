@@ -24,10 +24,7 @@ export function ProductList() {
 
     return (
         <div className="ProductList">
-
-			<h3>רשימת המוצרים שלנו:</h3>
             {products.map(product=> <ProductCard key={product.id} product={product}/>)};
-
         </div>
     );
 }

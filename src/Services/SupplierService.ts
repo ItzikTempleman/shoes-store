@@ -10,7 +10,7 @@ class SupplierService {
         if (store.getState().suppliers.length > 0) return store.getState().suppliers;
         const response = await axios.get<SupplierModel[]>(appConfig.suppliersUrl)
         const dbSupplier = response.data;
-        store.dispatch(supplierSlice.actions.initEmployees(dbSupplier));
+        store.dispatch(supplierSlice.actions.initSuppliers(dbSupplier));
         return dbSupplier
     }
 
@@ -26,7 +26,7 @@ class SupplierService {
         const options: AxiosRequestConfig = {headers: {"Content-Type": "multipart/form-data"}}
         const response = await axios.post<SupplierModel>(appConfig.suppliersUrl, supplier, options);
         const dbSupplier = response.data;
-        store.dispatch(supplierSlice.actions.getOneSupplier(dbSupplier));
+        store.dispatch(supplierSlice.actions.addSupplier(dbSupplier));
     }
 
     public async updateSupplier(supplier: SupplierModel) {

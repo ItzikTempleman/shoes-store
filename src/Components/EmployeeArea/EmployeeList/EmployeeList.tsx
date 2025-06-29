@@ -16,11 +16,7 @@ export function EmployeeList() {
     }, []);
     return (
         <div className="EmployeeList">
-            <h3>רשימת העובדים שלנו:</h3>
-            <br/>
-            {
-                employee.map(e => <EmployeeCard key={e.id} employee={e}/>)
-            }
+            {employee.map(e => <EmployeeCard key={e.id} employee={e}/>)}
         </div>
     );
 }

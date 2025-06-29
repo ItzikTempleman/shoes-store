@@ -24,7 +24,7 @@ export function SupplierList() {
 
     return (
         <div className="SupplierList">
-            <h3>רשימת הספקים שלנו:</h3>
+
             <br/>
             {
                 supplier.map(s=> <SupplierCard key={s.id} supplier={s}/>)
