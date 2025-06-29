@@ -8,18 +8,19 @@ import {notify} from "../../../Utils/Notify.ts";
 
 
 export function UserMenu() {
-    const user = useSelector<AppState, UserModel>(userState => userState.user);
+
+    const user = useSelector<AppState, UserModel>(state => state.user)
     const navigate = useNavigate();
 
-
-    function logout() {
+    function logout (){
         userService.logout();
-        notify.success("Bye");
+        notify.success("Bye")
         navigate("/home")
     }
 
     return (
         <div className="UserMenu">
+
             {
                 !user?.id && <div>
                     <NavLink to="/login">כניסה</NavLink>
@@ -31,7 +32,6 @@ export function UserMenu() {
                     <NavLink to="#" onClick={logout}>התנתק</NavLink>
                 </div>
             }
-
         </div>
     );
 }

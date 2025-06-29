@@ -21,7 +21,6 @@ export function Register() {
             navigate("/home")
         } catch (err: unknown) {
             notify.error(err);
-            navigate("/loginScreen")
         }
     }
 
