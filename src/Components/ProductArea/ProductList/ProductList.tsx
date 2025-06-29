@@ -24,7 +24,7 @@ export function ProductList() {
 
     return (
         <div className="ProductList">
-            {products.map(product=> <ProductCard key={product.id} product={product}/>)};
+            {products.map(product=> <ProductCard key={product.id} product={product}/>)}
         </div>
     );
 }

@@ -16,6 +16,9 @@ import {ProductList} from "../../ProductArea/ProductList/ProductList.tsx";
 import {ProductDetails} from "../../ProductArea/ProductDetails/ProductDetails.tsx";
 import {EditProduct} from "../../ProductArea/EditProduct/EditProduct.tsx";
 import {AddProduct} from "../../ProductArea/AddProduct/AddProduct.tsx";
+import {Register} from "../../UserArea/Register/Register.tsx";
+import {Login} from "../../UserArea/Login/Login.tsx";
+import {Admin} from "../../UserArea/Admin/Admin.tsx";
 
 export function Routing() {
     return (
@@ -45,6 +48,10 @@ export function Routing() {
 
                 <Route path="/about" element={<About/>}/>
                 <Route path="*" element={<Page404/>}/>
+
+                <Route path="/register" element={<Register/>}/>
+                <Route path="/login" element={<Login/>}/>
+                <Route path="/admin" element={<Admin/>}/>
             </Routes>
         </div>
     );
